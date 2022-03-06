@@ -4,7 +4,7 @@
 pragma solidity ^0.4.22;
 //인터페이스 구축
 interface usdc {     //usdethup 컨트렉트
-  function ETHUSD() external view returns(uint256);  //이더 : 달러 시세 30분에 1번 갱신
+  function ETHUSD() external view returns(uint256);  //이더 : 달러 시세 1200초에 1번 갱신 전역변수 가져오기
 }
 interface hitc {     //hit 컨트렉트
   function transfer(address _addr,uint256 _pay) external;

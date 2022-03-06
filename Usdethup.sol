@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 
 pragma solidity ^0.4.22;
-import "github.com/provable-things/ethereum-api/provableAPI_0.4.25.sol";
+import "https://github.com/provable-things/ethereum-api/blob/master/provableAPI_0.4.25.sol";
 
 contract Usdethup is usingProvable {
 
@@ -29,7 +29,7 @@ contract Usdethup is usingProvable {
         updatePrice();
     }
 
-   function () payable {}
+   function () external payable {}
    function getbalance()public view returns(uint256){
    return address(this).balance;
    }
@@ -40,8 +40,9 @@ contract Usdethup is usingProvable {
         } else {
           LogNewProvableQuery("Provable query was sent, standing by for the answer..");
           bytes32 queryId =
-            provable_query(60, "URL", "json(https://api.pro.coinbase.com/products/ETH-USD/ticker).price", 500000);
+            provable_query(1200, "URL", "json(https://api.pro.coinbase.com/products/ETH-USD/ticker).price", 500000);
   validIds[queryId] = true;
     }
 }
 }
+
